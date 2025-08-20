@@ -233,7 +233,7 @@ export default function RestaurantLandingPage() {
         </div>
         <div className="relative mx-auto overflow-hidden">
           <motion.div
-            className="flex gap-6"
+            className="flex gap-2 md:gap-6"
             initial={{ x: 0 }}
             animate={{ x: `-${100 * dishes.length / 3}%` }}
             transition={{
@@ -245,10 +245,8 @@ export default function RestaurantLandingPage() {
             {items.map((dish, index) => (
               <motion.div
                 key={`${dish.name}-${index}`}
-                style={{
-                  minWidth: "calc(100% / 3 - 16px)", // ✅ Show 3 cards properly
-                  transformOrigin: "center",
-                }}
+                className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2"
+                style={{ transformOrigin: "center" }}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
@@ -328,7 +326,7 @@ export default function RestaurantLandingPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto p-2">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -357,7 +355,7 @@ export default function RestaurantLandingPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative overflow-hidden rounded-lg shadow-xl"
+              className="relative overflow-hidden rounded-lg shadow-xl w-full h-80"
             >
               <Image
                 fill
