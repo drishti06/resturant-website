@@ -215,7 +215,8 @@ export default function RestaurantLandingPage() {
               <Image
                 src="/chef preparing gourmet dish.png"
                 alt="Chef preparing gourmet dish"
-                fill
+                width={600}
+                height={600}
                 className="rounded-lg shadow-2xl w-full h-[600px] object-cover"
               />
             </motion.div>
@@ -260,6 +261,8 @@ export default function RestaurantLandingPage() {
                     <Image
                       src={`/${dish.image}`}
                       alt={dish.name}
+                      // height={48}
+                      // width={48}
                       fill
                       className="object-cover rounded-l-xl h-full"
                     />
@@ -331,13 +334,13 @@ export default function RestaurantLandingPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative overflow-hidden rounded-lg shadow-xl"
+              className="relative overflow-hidden rounded-lg shadow-xl w-full h-80"
             >
               <Image
+                fill
                 src="/romantic dinner.png"
                 alt="Romantic dinner"
-                className="w-80 h-80 object-cover"
-                fill
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
@@ -360,7 +363,7 @@ export default function RestaurantLandingPage() {
                 fill
                 src="/chef table experience.png"
                 alt="Chef's table experience"
-                className="w-full h-80 object-cover"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
@@ -399,19 +402,19 @@ export default function RestaurantLandingPage() {
                 name: "Sarah Johnson",
                 rating: 5,
                 review: "Absolutely phenomenal! Every dish was a work of art. The service was impeccable and the atmosphere was perfect for our anniversary.",
-                image: "professional headshot of happy woman"
+                image: "placeholder.jpg"
               },
               {
                 name: "Michael Chen",
                 rating: 5,
                 review: "The best dining experience I've had in years. The chef's attention to detail and the quality of ingredients is unmatched.",
-                image: "professional headshot of smiling man"
+                image: "placeholder.jpg"
               },
               {
                 name: "Emily Rodriguez",
                 rating: 5,
                 review: "Bella Vista exceeded all expectations. The wine pairing was exceptional and the ambiance was simply magical.",
-                image: "professional headshot of elegant woman"
+                image: "placeholder.jpg"
               }
             ].map((testimonial, index) => (
               <motion.div
@@ -425,7 +428,7 @@ export default function RestaurantLandingPage() {
                   <CardContent className="p-0">
                     <div className="flex items-center mb-4">
                       <img
-                        src={`/placeholder.svg?height=60&width=60&query=${testimonial.image}`}
+                        src={`/${testimonial.image}`}
                         alt={testimonial.name}
                         className="w-12 h-12 rounded-full object-cover mr-4"
                       />
