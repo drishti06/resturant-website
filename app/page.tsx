@@ -64,12 +64,12 @@ const navLinks = [
 const items = [...dishes, ...dishes];
 
 export default function RestaurantLandingPage() {
-  const shootingStars = Array.from({ length: 12 }).map((_, i) => ({
-    id: i,
-    top: `${Math.random() * 80}%`,
-    left: `${Math.random() * 100}%`,
-    delay: Math.random() * 5,
-  }));
+  // const shootingStars = Array.from({ length: 12 }).map((_, i) => ({
+  //   id: i,
+  //   top: `${Math.random() * 80}%`,
+  //   left: `${Math.random() * 100}%`,
+  //   delay: Math.random() * 5,
+  // }));
 
   const handleScroll = (id: string) => {
     const section = document.getElementById(id);
@@ -212,9 +212,10 @@ export default function RestaurantLandingPage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <img
+              <Image
                 src="/chef preparing gourmet dish.png"
                 alt="Chef preparing gourmet dish"
+                fill
                 className="rounded-lg shadow-2xl w-full h-[600px] object-cover"
               />
             </motion.div>
@@ -355,14 +356,15 @@ export default function RestaurantLandingPage() {
               viewport={{ once: true }}
               className="relative overflow-hidden rounded-lg shadow-xl"
             >
-              <img
+              <Image
+                fill
                 src="/chef table experience.png"
                 alt="Chef's table experience"
                 className="w-full h-80 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                <h3 className="text-2xl font-bold mb-2">Chef's Table</h3>
+                <h3 className="text-2xl font-bold mb-2">Chef&apos;s Table</h3>
                 <p className="text-lg mb-4">Interactive dining experience with our head chef</p>
                 <Button className="bg-accent hover:bg-accent/90 text-accent-foreground">
                   Reserve - $200
@@ -437,7 +439,7 @@ export default function RestaurantLandingPage() {
                       </div>
                     </div>
                     <p className="text-muted-foreground italic leading-relaxed">
-                      "{testimonial.review}"
+                      &quot;{testimonial.review}&quot;
                     </p>
                   </CardContent>
                 </Card>
