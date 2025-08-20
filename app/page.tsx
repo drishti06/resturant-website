@@ -54,10 +54,9 @@ const dishes = [
 ];
 
 const navLinks = [
-  { name: "Home", id: "home" },
-  { name: "Signature Dishes", id: "dishes" },
-  { name: "Menu", id: "menu" },
   { name: "About Us", id: "about" },
+  { name: "Menu", id: "menu" },
+  { name: "Offers", id: "special" },
   { name: "Contact", id: "contact" },
 ];
 // Duplicate dishes for infinite looping
@@ -82,13 +81,6 @@ export default function RestaurantLandingPage() {
       <header className="fixed top-0 left-0 w-full h-[10vh] bg-[#0d0d0d]/90 backdrop-blur-md z-50 shadow-md">
         <div className="max-w-7xl mx-auto h-full flex items-center justify-between px-6">
           {/* Logo */}
-          {/* <motion.h1
-            className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-white cursor-pointer"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-          >
-            Bella Vista
-          </motion.h1> */}
           <Image src="/logo.png" alt='logo' width={80} height={80} />
 
           {/* Navigation */}
@@ -152,7 +144,8 @@ export default function RestaurantLandingPage() {
           >
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 hover:scale-105"
+              onClick={() => handleScroll('contact')}
+              className=" hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 hover:scale-105"
             >
               Reserve Your Table
             </Button>
@@ -161,7 +154,7 @@ export default function RestaurantLandingPage() {
       </section>
 
       {/* About Us Section */}
-      <section className="py-20 px-4">
+      <section id='about' className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -225,7 +218,7 @@ export default function RestaurantLandingPage() {
       </section>
 
       {/* Menu Section */}
-      <section className="bg-[#000000] py-20">
+      <section id='menu' className="bg-[#000000] py-20">
         <div className='max-w-7xl mx-auto mb-4'>
           <h2 className="text-white text-4xl md:text-5xl font-bold mb-15 text-center">
             Signature Dishes
@@ -245,7 +238,7 @@ export default function RestaurantLandingPage() {
             {items.map((dish, index) => (
               <motion.div
                 key={`${dish.name}-${index}`}
-                className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2"
+                className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 px-2"
                 style={{ transformOrigin: "center" }}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
@@ -255,7 +248,7 @@ export default function RestaurantLandingPage() {
                  transition-all duration-300 bg-white rounded-xl
                  flex flex-row h-48 p-0">
                   {/* Left: Image (Full Height) */}
-                  <div className="relative w-1/2 h-full ">
+                  <div className="relative w-1/2 h-full">
                     <Image
                       src={`/${dish.image}`}
                       alt={dish.name}
@@ -269,7 +262,7 @@ export default function RestaurantLandingPage() {
                   {/* Right: Content */}
                   <CardContent className="p-4 w-2/3 flex flex-col justify-between">
                     <div>
-                      <h3 className="text-lg font-bold text-foreground mb-1">
+                      <h3 className="text-lg font-bold text-foreground mb-1 leading-none">
                         {dish.name}
                       </h3>
                       <p className="text-sm text-muted-foreground leading-snug mb-2 line-clamp-3">
@@ -309,8 +302,8 @@ export default function RestaurantLandingPage() {
       </section>
 
       {/* Special Offers Section */}
-      <section className="">
-        <div className="mx-auto bg-gray-100 py-20">
+      <section id="special" className="">
+        <div className="mx-auto bg-gray-200 py-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -377,7 +370,7 @@ export default function RestaurantLandingPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-4 bg-muted/30">
+      <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -451,7 +444,7 @@ export default function RestaurantLandingPage() {
       </section>
 
       {/* Reservation Section */}
-      <section className="py-20 px-4">
+      <section id="contact" className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
